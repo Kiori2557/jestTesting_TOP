@@ -7,5 +7,5 @@ test("capitalize a string", () => {
   expect(capitalize("hello")).toBe("Hello");
 });
 test("reverse a string", () => {
-  expect(reverseString()).toBeDefined();
+  expect(reverseString("hello")).toBe("olleh");
 });
