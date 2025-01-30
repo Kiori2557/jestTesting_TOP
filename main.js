@@ -7,12 +7,7 @@ export function capitalize(str) {
 
 export function reverseString(str) {
   if (typeof str !== "string") return;
-  let array = str.split("");
-  let reverse = [];
-  for (let index = array.length - 1; index >= 0; index--) {
-    reverse.push(array[index]);
-  }
-  return reverse.join("");
+  return str.split("").reverse().join("");
 }
 
 export let calulator = {
@@ -39,4 +34,20 @@ export function caesarChiper(str, shiftNum) {
     }
   }
   return array.join("");
+}
+export function analyzeArray(arr) {
+  let length = arr.length;
+  let average = arr.reduce((accu, current) => accu + current, 0) / length;
+  let min = arr[0];
+  let max = arr[0];
+  arr.forEach((num) => {
+    if (num < min) min = num;
+    if (num > max) max = num;
+  });
+  return {
+    average,
+    min,
+    max,
+    length,
+  };
 }

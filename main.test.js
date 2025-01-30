@@ -1,4 +1,10 @@
-import { capitalize, reverseString, calulator, caesarChiper } from "./main";
+import {
+  capitalize,
+  reverseString,
+  calulator,
+  caesarChiper,
+  analyzeArray,
+} from "./main";
 test("capitalize a string", () => {
   expect(capitalize("hello")).toBe("Hello");
 });
@@ -13,4 +19,12 @@ test("calculate 2 number", () => {
 });
 test("encrypt string with caesar cipher", () => {
   expect(caesarChiper("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+test("analyze a number array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toEqual({
+    average: 4,
+    length: 6,
+    max: 8,
+    min: 1,
+  });
 });
