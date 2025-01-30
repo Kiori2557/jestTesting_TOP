@@ -1,6 +1,3 @@
-// export function capitalize(str) {
-//   return str.toUpperCase();
-// }
 export function capitalize(str) {
   if (typeof str !== "string") return;
   let array = str.split("");
@@ -26,16 +23,20 @@ export let calulator = {
 };
 
 export function caesarChiper(str, shiftNum) {
-  let i = str.length;
-  let j = str.length;
   let array = str.split("");
-  for (let index = 0; index < array.length; index++) {
-    array[index] =
-      array[index].charCodeAt(0) - 32 + shiftNum < 90
-        ? String.fromCharCode(array[index].charCodeAt(0) - 32 + shiftNum)
-        : String.fromCharCode(
-            array[index].charCodeAt(0) - (32 + 26) + shiftNum
-          );
+  for (let i = 0; i < array.length; i++) {
+    let code = array[i].charCodeAt(0);
+    let shiftedCode = code + shiftNum;
+    if ((code > 64 && code < 91) || (code > 96 && code < 123)) {
+      if ((shiftedCode > 90 && shiftedCode < 97) || shiftedCode > 122) {
+        array[i] = String.fromCharCode(shiftedCode - 26);
+      } else if (
+        (shiftedCode > 64 && shiftedCode < 91) ||
+        (shiftedCode > 96 && shiftedCode < 123)
+      ) {
+        array[i] = String.fromCharCode(shiftedCode);
+      }
+    }
   }
   return array.join("");
 }

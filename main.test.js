@@ -1,7 +1,3 @@
-// import capitalize from "./main";
-// test("capitalize the first letter of a string", () => {
-//   expect(capitalize("hello")).toBeDefined();
-// });
 import { capitalize, reverseString, calulator, caesarChiper } from "./main";
 test("capitalize a string", () => {
   expect(capitalize("hello")).toBe("Hello");
@@ -16,5 +12,5 @@ test("calculate 2 number", () => {
   expect(calulator.multiply(1, 2)).toBeCloseTo(2);
 });
 test("encrypt string with caesar cipher", () => {
-  expect(caesarChiper("hello", 20)).toBe("BYFFI");
+  expect(caesarChiper("Hello, World!", 3)).toBe("Khoor, Zruog!");
 });
